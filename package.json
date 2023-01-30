@@ -1,0 +1,22 @@
+{
+  "name": "simon-dice",
+  "version": "1.0.0",
+  "description": "juego",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rodrigo-ade/simon-dice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rodrigo-ade/simon-dice/issues"
+  },
+  "homepage": "https://github.com/Rodrigo-ade/simon-dice#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}
