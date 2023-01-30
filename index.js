@@ -48,7 +48,7 @@ function comprobarPatronUsuario(evento) {
             }, RETRASO_NUEVO_TURNO);
         }
     } else {
-        perdiste();
+        ejecutarPerdiste();
     }
 }
 
@@ -61,7 +61,7 @@ function pintarColor($color) {
     }, RETRASO_PINTADO);
 }
 
-function perdiste() {
+function ejecutarPerdiste() {
     numeroRonda = 1;
     coloresMaquina = [];
     coloresUsuario = [];
