@@ -1,0 +1,36 @@
+body{
+    background-color: grey;
+}
+
+#panel-usuario{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+[role=alert]{
+    margin-left: 6px;
+}
+
+#rojo{
+    background-color: red;
+}
+
+#azul{
+    background-color: blue;
+}
+
+#verde{
+    background-color: green;
+}
+
+#amarillo{
+    background-color: yellow;
+}
+
+.color{
+    height: 125px;
+    opacity: 0.5;
+    margin: 3px;
+    border-style: solid;
+    border-color: black;
+}
