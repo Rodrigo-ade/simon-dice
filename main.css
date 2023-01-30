@@ -34,3 +34,7 @@ body{
     border-style: solid;
     border-color: black;
 }
+
+.oculto{
+    display: none;
+}
