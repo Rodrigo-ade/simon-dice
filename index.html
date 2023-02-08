@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Simon Dice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
+  <body>
+    <div class="container text-center" id="panel-usuario">
+      <div class="row">
+        <div class="col-sm-7 alert alert-warning" role="alert" id="indicador-turno">
+          Toca el boton para comenzar a jugar
+        </div>
+        <div class="col-sm-2 alert alert-dark" role="alert">
+          <p>Ronda # <strong id="ronda"></strong></p>
+        </div>
+        <div class="col-sm-2 alert alert-dark" role="alert">
+          <button type="button" class="btn btn-warning" id="comenzar">
+            Comenzar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="tablero-juego">
+      <div class="row">
+        <div class="col-sm">
+          <div class="color" id="rojo"></div>
+        </div>
+        <div class="col-sm">
+          <div class="color" id="azul"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="color" id="amarillo"></div>
+        </div>
+        <div class="col-sm">
+          <div class="color" id="verde"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
