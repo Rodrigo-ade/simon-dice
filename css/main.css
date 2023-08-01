@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(53, 53, 53) !important;
+    margin: 0;
+    padding: 0;
+}
+
+#rojo{
+    background-color: red !important;
+}
+
+#azul{
+    background-color: blue;
+}
+
+#verde{
+    background-color: green;
+}
+
+#amarillo{
+    background-color: yellow;
+}
+
+h2{
+    color: rgb(168, 168, 0) !important;
+}
+
+p{
+    font-size: 20px;
+    color: rgb(203, 203, 203);
+}
+
+#tablero{
+    padding: 15px 24%;
+}
+
+.color{
+    height: 125px;
+    border: 1px rgb(255, 255, 255) solid;
+    opacity: 1;
+}
