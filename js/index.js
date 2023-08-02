@@ -26,16 +26,63 @@ function manejarTurnoMaquina(){
     
     pintarColores(patronMaquina);
 
+    setTimeout(function(){
+        hacerTurnoUsuario();
+    },delayTurnojugador);
 
 }
+
 function indicarTurnoMaquina(){
     modificarAlerta("alert-danger","Turno de la máquina");
 }
+
+function indicarTurnoUsuario(){
+    modificarAlerta("alert-info", "Te toca");
+}
+
+function hacerTurnoUsuario(){
+    activarElegirColores();
+    indicarTurnoUsuario();
+}
+
+function activarElegirColores(){
+    $COLORES.forEach(function($color){
+        $color.onclick = manejarElegirColor;
+    })
+}
+
 function desactivarElegirColores(){
     $COLORES.forEach(function($color){
         $color.onclick = "";
     })
 }
+
+function manejarElegirColor($color){
+    $color = $color.target;
+    pintarColores([$color]);
+    patronJugador.push($color);
+    let perdiste = false;
+
+    if(patronJugador[patronJugador.length-1] !== patronMaquina[patronJugador.length-1]){
+        perdiste = true;
+        reiniciarValores();
+    }
+    
+    if(patronJugador.length === patronMaquina.length && !perdiste){
+        patronJugador = [];
+        manejarRonda();
+    }
+}
+
+function reiniciarValores(){
+    modificarAlerta("alert-warning",`Perdiste! presiona jugar para reintentarlo`);
+    desactivarElegirColores();
+    $JUGAR.classList.remove("oculto");
+    nivel = 0;
+    patronJugador = [];
+    patronMaquina = [];
+}
+
 function pintarColores($colores){
     let delay = 100;
 
