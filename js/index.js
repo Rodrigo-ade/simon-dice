@@ -6,6 +6,7 @@ $JUGAR.onclick = comenzarJuego;
 let nivel = 0;
 
 function comenzarJuego(){
+    iniciarContador();
     $JUGAR.classList.add("oculto");
     manejarRonda();
 }
@@ -77,6 +78,7 @@ function manejarElegirColor($color){
 function reiniciarValores(){
     modificarAlerta("alert-warning",`Perdiste! presiona jugar para reintentarlo`);
     desactivarElegirColores();
+    pararContadorSegundos();
     $JUGAR.classList.remove("oculto");
     nivel = 0;
     patronJugador = [];
@@ -107,4 +109,23 @@ function elegirColorRandom(){
 function modificarAlerta(estilo,texto){
     document.querySelector("#estado-turno").className = `alert ${estilo}`;
     document.querySelector("#turno").textContent = `${texto}`;
+}
+function contadorSegundos(){
+    if(!pararContador){
+        setTimeout(function(){
+            segundos ++;
+            document.querySelector("#contador").textContent = segundos;
+            contadorSegundos();
+        },1000)
+    }else{
+        return;
+    }
+}
+function pararContadorSegundos(){
+    pararContador = true;
+}
+function iniciarContador(){
+    segundos = 0;
+    pararContador = false;
+    contadorSegundos();
 }
