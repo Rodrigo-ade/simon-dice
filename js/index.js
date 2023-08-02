@@ -1,10 +1,3 @@
-const $JUGAR = document.querySelector("#jugar");
-const $COLORES  = document.querySelectorAll(".color");
-let patronMaquina = [];
-let patronJugador = [];
-$JUGAR.onclick = comenzarJuego;
-let nivel = 0;
-
 function comenzarJuego(){
     iniciarContador();
     $JUGAR.classList.add("oculto");
@@ -30,7 +23,6 @@ function manejarTurnoMaquina(){
     setTimeout(function(){
         hacerTurnoUsuario();
     },delayTurnojugador);
-
 }
 
 function indicarTurnoMaquina(){
@@ -110,6 +102,7 @@ function modificarAlerta(estilo,texto){
     document.querySelector("#estado-turno").className = `alert ${estilo}`;
     document.querySelector("#turno").textContent = `${texto}`;
 }
+
 function contadorSegundos(){
     if(!pararContador){
         setTimeout(function(){
@@ -121,11 +114,23 @@ function contadorSegundos(){
         return;
     }
 }
+
 function pararContadorSegundos(){
     pararContador = true;
 }
+
 function iniciarContador(){
     segundos = 0;
     pararContador = false;
     contadorSegundos();
 }
+
+const $JUGAR = document.querySelector("#jugar");
+const $COLORES  = document.querySelectorAll(".color");
+let patronMaquina = [];
+let patronJugador = [];
+let nivel = 0;
+let segundos = 0;
+let pararContador = false;
+
+$JUGAR.onclick = comenzarJuego;
