@@ -5,19 +5,23 @@ body{
 }
 
 #rojo{
-    background-color: red !important;
+    background-color: red;
+    border-top-left-radius: 100%;
 }
 
 #azul{
     background-color: blue;
+    border-top-right-radius: 100%;
 }
 
 #verde{
     background-color: green;
+    border-bottom-right-radius: 100%;
 }
 
 #amarillo{
     background-color: yellow;
+    border-bottom-left-radius: 100%;
 }
 
 h2{
@@ -30,11 +34,16 @@ p{
 }
 
 #tablero{
-    padding: 15px 24%;
+    padding: 15px 28%;
 }
 
 .color{
-    height: 125px;
+    height: 170px;
     border: 1px rgb(255, 255, 255) solid;
-    opacity: 1;
+    opacity: 0.5;
+    transition: all 600ms;
+}
+
+.oculto{
+    visibility: hidden;
 }
