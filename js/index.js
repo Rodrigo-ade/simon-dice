@@ -1,28 +1,32 @@
 function comenzarJuego(){
     iniciarContador();
     $JUGAR.classList.add("oculto");
-    manejarRonda();
-}
-
-function manejarRonda(){
-    setTimeout(function(){
-        manejarTurnoMaquina();
-    },1000);
+    manejarTurnoMaquina();
 }
 
 function manejarTurnoMaquina(){
-    nivel ++;
-    document.querySelector("#nivel").textContent = nivel;
-    desactivarElegirColores();
+    actualizarNivel();
     indicarTurnoMaquina();
+    desactivarElegirColores();
     patronMaquina.push(elegirColorRandom());
-    let delayTurnojugador = patronMaquina.length * 1000 + 500;
-    
-    pintarColores(patronMaquina);
+    const DELAY_TURNO_JUGADOR = (patronMaquina.length + 1) * 1000;
+    let delay = 0;
+
+    patronMaquina.forEach(function($color,indice){
+        delay = (indice+1) * 1000;
+        setTimeout(function(){
+            pintarColor($color);
+        },delay)
+    });
 
     setTimeout(function(){
         hacerTurnoUsuario();
-    },delayTurnojugador);
+    },DELAY_TURNO_JUGADOR);
+}
+
+function actualizarNivel(){
+    nivel ++;
+    document.querySelector("#nivel").textContent = nivel;
 }
 
 function indicarTurnoMaquina(){
@@ -46,13 +50,14 @@ function activarElegirColores(){
 
 function desactivarElegirColores(){
     $COLORES.forEach(function($color){
-        $color.onclick = "";
+        $color.onclick = function(){
+        };
     })
 }
 
 function manejarElegirColor($color){
     $color = $color.target;
-    pintarColores([$color]);
+    pintarColor($color);
     patronJugador.push($color);
     let perdiste = false;
 
@@ -63,7 +68,7 @@ function manejarElegirColor($color){
     
     if(patronJugador.length === patronMaquina.length && !perdiste){
         patronJugador = [];
-        manejarRonda();
+        manejarTurnoMaquina();
     }
 }
 
@@ -77,21 +82,11 @@ function reiniciarValores(){
     patronMaquina = [];
 }
 
-function pintarColores($colores){
-    let delay = 100;
-
-    $colores.forEach(function($color){
-        setTimeout(function(){
-            $color.style.opacity = 1;
-        }, delay);
-
-        delay += 500;
-
-        setTimeout(function(){
-            $color.style.opacity = 0.5;
-        }, delay);
-        delay += 500;
-    })
+function pintarColor($color){
+    $color.style.opacity = 1;
+    setTimeout(function(){
+        $color.style.opacity = 0.5;
+    },500);
 }
 
 function elegirColorRandom(){
