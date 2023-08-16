@@ -1,0 +1,49 @@
+body{
+    background-color: rgb(53, 53, 53) !important;
+    margin: 0;
+    padding: 0;
+}
+
+#rojo{
+    background-color: red;
+    border-top-left-radius: 100%;
+}
+
+#azul{
+    background-color: blue;
+    border-top-right-radius: 100%;
+}
+
+#verde{
+    background-color: green;
+    border-bottom-right-radius: 100%;
+}
+
+#amarillo{
+    background-color: yellow;
+    border-bottom-left-radius: 100%;
+}
+
+h2{
+    color: rgb(168, 168, 0) !important;
+}
+
+p{
+    font-size: 20px;
+    color: rgb(203, 203, 203);
+}
+
+#tablero{
+    padding: 15px 28%;
+}
+
+.color{
+    height: 170px;
+    border: 1px rgb(255, 255, 255) solid;
+    opacity: 0.5;
+    transition: all 500ms;
+}
+
+.oculto{
+    visibility: hidden;
+}
